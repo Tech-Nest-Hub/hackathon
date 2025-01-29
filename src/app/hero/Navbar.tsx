@@ -6,63 +6,56 @@ import { Button } from "@/components/ui/button"
 
 export function Navbar() {
   return (
-    <div className="border-b">
-      {/* <div className="flex h-10 items-center justify-between bg-white px-4 text-sm text-gray-600">
-        <div className="flex items-center space-x-2">
-          <span className="text-yellow-500">🎉</span>
-          <span>Get 5% Off your first order</span>
-          <Button variant="link" className="h-auto p-0 text-red-600 hover:text-red-700">
-            Promo: OFF5FST
-          </Button>
+    <>
+    <div className="flex justify-between items-center py-4 lg:px-20 px-2 border md:px-8">   
+
+        {/* logoSection */}
+        <div>
+            <Link href="/">
+                
+                    <h1 className="text-3xl text-red-600 font-semibold">Logo</h1>
+                
+            </Link>
+
         </div>
-        <div className="flex items-center space-x-2">
-          <MapPin className="h-4 w-4 text-green-600" />
-          <span>Regent Street, 64, A128, London</span>
-          <Button variant="link" className="h-auto p-0 text-red-600 hover:text-red-700">
-            Change Location
-          </Button>
+
+        {/* navigation links */}
+        <div className="">
+
+            <nav>
+                <ul className="flex space-x-4 lg:gap-3 gap-1 items-center">
+                    <li>
+                        <Link href="/">
+                            <p className="text-base text-red-600 hover:text-sm hover:text-red-600 transition-all font-semibold">Home</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/menu">
+                            <p className="text-base  hover:text-red-500 hover:text-sm transition-all font-semibold">Brouse Menu</p>
+                        </Link>
+                    </li>
+                    <li>
+
+                        <Link href="/offers">
+                            <p className="text-base  hover:text-red-500 hover:text-sm transition-all font-semibold">Special Offers</p>
+                        </Link>
+
+                    </li>
+                </ul>
+            </nav>
+
         </div>
-        <div className="flex items-center space-x-2">
-          <ShoppingBag className="h-4 w-4 text-green-600" />
-          <span>23 Items</span>
-          <span className="font-medium text-green-600">GBP 79.89</span>
+
+        {/* loginButtons */}
+
+        <div>
+            <Button className="mx-4 rounded-full text-base border border-red-600 hover:bg-red-100 transition-all">Sign In</Button>
+
+            <Button className="rounded-full text-base bg-green-300 hover:bg-green-400 transition-all ">Sign Up</Button>
+
         </div>
-      </div> */}
-      <div className="flex h-16 items-center justify-between bg-white px-4">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-red-600">Tech Nest Food System</span>
-        </Link>
-        <nav className="flex items-center space-x-6">
-          <Link
-            href="/"
-            className="text-sm font-medium text-gray-600 transition-all hover:scale-105 hover:text-green-600 hover:underline"
-          >
-            Home
-          </Link>
-          <Link
-            href="/special-offers"
-            className="text-sm font-medium text-gray-600 transition-all hover:scale-105 hover:text-green-600 hover:underline"
-          >
-            Special Offers
-          </Link>
-          <Link
-            href="/browse-menu"
-            className="text-sm font-medium text-gray-600 transition-all hover:scale-105 hover:text-green-600 hover:underline"
-          >
-            Browse Menu
-          </Link>
-        </nav>
-        <div className="flex items-center space-x-4">
-          <Button
-            variant="outline"
-            className="border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700 hover:scale-105 rounded-full transition-all"
-          >
-            Login
-          </Button>
-          <Button className="bg-green-600 text-white hover:bg-green-700 hover:scale-105 transition-all rounded-full">Sign Up</Button>
-        </div>
-      </div>
     </div>
+    </>
   )
 }
 
