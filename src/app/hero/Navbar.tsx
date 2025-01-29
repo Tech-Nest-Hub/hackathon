@@ -48,7 +48,14 @@ export function Navbar() {
         </div>
 
         {/* loginButtons */}
-        <div>
+        <div className="flex gap-6">
+          {userId ? <Button
+              onClick={() => router.push('/dashboard')}
+              variant="outline"
+              className="border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700 hover:scale-105 transition-all"
+            >
+              Dashboard
+            </Button>: ""}
         {userId ? (
             <Button onClick={() => signOut({ redirectUrl: "/" })}>
               Logout

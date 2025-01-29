@@ -66,7 +66,7 @@ export default function Menu(){
 
 
     return(
-        <div className="px-4 md:px-20 my-10">
+        <div className="px-4 md:px-20 my-10 mt-10">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Our Menu</h2>
           <Button variant="outline" className="border-orange-500 text-orange-500 hover:bg-orange-50">
