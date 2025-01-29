@@ -15,6 +15,8 @@ import RestaurantTablesGrid from "./RestaurantTable"
 
 const Tables = () => {
   return (
+   
+
     <div className="space-y-5">
       {/* Breadcrumb and Header */}
       <div className="flex justify-between mb-5">
@@ -23,7 +25,7 @@ const Tables = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink className="font-medium">
-                  <Link href="/">Dashboard</Link>
+                  <Link href="/dashboard">Dashboard</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
