@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { MenuCard } from "../MenuCard";
 import Link from "next/link";
+import Menu from "@/app/menu/(components)/Menu";
 
 // Sample data
 export const menuItems = [
@@ -83,13 +84,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {menuItems.map((item) => (
-          <Link href={`/dashboard/orders/${item.id}`}>
-            <MenuCard key={item.id} item={item} />
-          </Link>
-        ))}
-      </div>
+      
+       <Menu/>
+    
     </div>
   );
 };

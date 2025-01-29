@@ -2,6 +2,7 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/Sidebar"
 import type { Metadata } from "next"
 import type React from "react" // Import React
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "Restaurant Table Management",
@@ -13,7 +14,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <main className="p-6">{children}</main>
+        <main className="p-6">{children}
+            <Toaster/>
+        </main>
       </SidebarInset>
     </SidebarProvider>
   )
