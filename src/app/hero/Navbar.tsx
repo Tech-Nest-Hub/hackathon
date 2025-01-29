@@ -19,7 +19,9 @@ export function Navbar() {
         {/* logoSection */}
         <div>
           <Link href="/">
-            <h1 className="text-3xl text-red-600 font-semibold">Logo</h1>
+            <h1 className="text-3xl text-red-600 font-semibold">
+                Logo
+            </h1>
           </Link>
         </div>
 
@@ -29,7 +31,7 @@ export function Navbar() {
             <ul className="flex space-x-4 lg:gap-3 gap-1 items-center">
               <li>
                 <Link href="/">
-                  <p className="text-base text-red-600 hover:text-sm hover:text-red-600 transition-all font-semibold">Home</p>
+                  <p className="text-base  hover:text-sm hover:text-red-600 transition-all font-semibold">Home</p>
                 </Link>
               </li>
               <li>
