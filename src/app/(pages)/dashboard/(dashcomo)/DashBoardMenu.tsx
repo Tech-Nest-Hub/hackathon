@@ -67,7 +67,7 @@ interface OrderItem {
   quantity: number
 }
 
-export default function DashBoardMenu() {
+export default function DashboardMenu() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
@@ -98,13 +98,14 @@ export default function DashBoardMenu() {
     setIsOrderSheetOpen(true)
   }
 
-  const removeFromOrder = (name: string) => {
+  const updateOrderItem = (name: string, quantity: number) => {
     setOrderItems((prevItems) => {
-      const updatedItems = prevItems
-        .map((item) => (item.name === name ? { ...item, quantity: item.quantity - 1 } : item))
-        .filter((item) => item.quantity > 0)
-      return updatedItems
+      return prevItems.map((item) => (item.name === name ? { ...item, quantity } : item))
     })
+  }
+
+  const removeFromOrder = (name: string) => {
+    setOrderItems((prevItems) => prevItems.filter((item) => item.name !== name))
   }
 
   return (
@@ -212,6 +213,7 @@ export default function DashBoardMenu() {
         isOpen={isOrderSheetOpen}
         onClose={() => setIsOrderSheetOpen(false)}
         orderItems={orderItems}
+        updateOrderItem={updateOrderItem}
         removeFromOrder={removeFromOrder}
       />
     </motion.div>
