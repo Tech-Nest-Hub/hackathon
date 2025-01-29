@@ -48,8 +48,8 @@ const menuItems = [
     icon: Users,
   },
   {
-    title: "Billing",
-    url: "/dashboard/billing",
+    title: "Report",
+    url: "/dashboard/report",
     icon: CreditCard,
   },
   {

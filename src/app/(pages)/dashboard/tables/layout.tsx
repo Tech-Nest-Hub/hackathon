@@ -14,7 +14,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-
         <main className="p-6">{children}
             <Toaster/>
         </main>
