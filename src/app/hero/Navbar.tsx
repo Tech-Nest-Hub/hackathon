@@ -1,16 +1,19 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { MapPin, ShoppingBag } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { MagicCursor } from "../menu/(components)/MagicCursor"
+import Link from "next/link";
+import { MapPin, ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useAuth, useClerk } from "@clerk/nextjs";
+import { MagicCursor } from "../menu/(components)/MagicCursor";
 
 export function Navbar() {
+  const { userId } = useAuth();
+  const { signOut } = useClerk();
   return (
     <>
-    <MagicCursor/>
     <div className="fixed top-0 left-0 w-full z-50 bg-slate-100 ">
       <div className="flex justify-between items-center py-4 lg:px-20 px-2 border md:px-8">
+    <MagicCursor/>
 
         {/* logoSection */}
         <div>
@@ -44,12 +47,21 @@ export function Navbar() {
 
         {/* loginButtons */}
         <div>
-          <Button className="mx-4 rounded-full text-base border border-red-600 hover:bg-red-100 transition-all">Sign In</Button>
-          <Button className="rounded-full text-base bg-green-300 hover:bg-green-400 transition-all">Sign Up</Button>
+        {userId ? (
+            <Button onClick={() => signOut({ redirectUrl: "/" })}>
+              Logout
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              className="border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700 hover:scale-105 transition-all"
+            >
+              Login
+            </Button>
+          )}
         </div>
 
       </div>
-    </div>
-    </>
+    </div></>
   )
 }
