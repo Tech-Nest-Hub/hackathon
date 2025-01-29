@@ -1,4 +1,4 @@
-import { ShoppingCart, ArrowLeftRight, Inbox, NotebookText, Settings } from "lucide-react"
+import { ShoppingCart, ArrowLeftRight, Inbox, NotebookText, User } from "lucide-react"
 
 import {
   Sidebar,
@@ -11,7 +11,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { url } from "inspector"
 
 // Menu items.
 
@@ -41,6 +40,19 @@ const biling = [
     }
 ]
 
+const config = [
+    {
+        title: "General",
+        url: "/",
+        icon: NotebookText 
+    },
+    {
+        title: "Team",
+        url: "/",
+        icon: User 
+    }
+]
+
 export function AppSidebar() {
   return (
     <Sidebar>
@@ -48,6 +60,25 @@ export function AppSidebar() {
         Techspire Food System
       </SidebarHeader>
       <SidebarContent>
+
+      <SidebarGroup>
+          <SidebarGroupLabel className="text-lg">Table</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="ml-5">
+              {items.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
         <SidebarGroup>
           <SidebarGroupLabel className="text-lg">Items</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -70,7 +101,25 @@ export function AppSidebar() {
           <SidebarGroupLabel className="text-lg">Biling</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="ml-5">
-              {items.map((item) => (
+              {biling.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-lg">Configuration</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="ml-5">
+              {config.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
