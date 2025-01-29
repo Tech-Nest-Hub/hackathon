@@ -1,11 +1,7 @@
-import RestaurantTablesGrid from "./(components)/TableGrid"
+import Tables from "./(components)/TableGrid";
 
-const Tables = () => {
-  return (
-    <div>
-      <RestaurantTablesGrid/>
-    </div>
-  )
+
+export default function DashboardPage() {
+  return <Tables />
 }
 
-export default Tables
