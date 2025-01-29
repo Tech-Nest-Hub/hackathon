@@ -1,26 +1,10 @@
-'use client'
-
-import { motion } from "framer-motion"
-
+import ReservationForm from "./ReservationForm";
 
 export default function ReservationsPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="container mx-auto py-10"
-    >
-      <motion.h1
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        className="text-4xl font-bold mb-8 text-center text-orange-800"
-      >
-        Make a Reservation
-      </motion.h1>
-      <ReservationsPage/>
-    </motion.div>
+    <div className="container mx-auto py-10">
+      <h1 className="text-3xl font-bold mb-6 flex justify-center">Make a Reservation</h1>
+      <ReservationForm />
+    </div>
   )
 }
-
