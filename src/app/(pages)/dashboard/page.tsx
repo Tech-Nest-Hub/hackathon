@@ -1,10 +1,11 @@
 import React from 'react'
-import { TableGridView } from './(components)/TableGrid'
+import { RestaurantPage } from './(components)/RestaurantTable'
+
 
 export default function page() {
   return (
     <div>
-      <TableGridView/>
+      <RestaurantPage/>
     </div>
   )
 }
