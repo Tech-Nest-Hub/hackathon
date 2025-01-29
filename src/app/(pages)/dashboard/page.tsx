@@ -1,11 +1,11 @@
 import React from 'react'
-import { RestaurantPage } from './(components)/RestaurantTable'
+import RestaurantTablesGrid from './tables/(components)/TableGrid'
 
 
 export default function page() {
   return (
     <div>
-      <RestaurantPage/>
+      
     </div>
   )
 }

@@ -1,5 +1,13 @@
-import { ShoppingCart, ArrowLeftRight, Inbox, NotebookText, User } from "lucide-react"
-
+import {
+  ShoppingCart,
+  Coffee,
+  Users,
+  CreditCard,
+  Settings,
+  LayoutDashboard,
+  Utensils,
+  ClipboardList,
+} from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -11,121 +19,64 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import Link from "next/link"
 
-// Menu items.
-
-const items = [
+const menuItems = [
   {
-    title: "Purchase",
-    url: "#",
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Tables",
+    url: "/dashboard/tables",
+    icon: Utensils,
+  },
+  {
+    title: "Orders",
+    url: "/dashboard/orders",
     icon: ShoppingCart,
   },
   {
-    title: "Sales",
-    url: "#",
-    icon: Inbox,
+    title: "Reservations",
+    url: "/dashboard/reservations",
+    icon: ClipboardList,
   },
-]
-
-const biling = [
-    {
-        title: "Transaction",
-        url: "/",
-        icon: ArrowLeftRight
-    },
-    {
-        title: "Invoice",
-        url: "/",
-        icon: NotebookText 
-    }
-]
-
-const config = [
-    {
-        title: "General",
-        url: "/",
-        icon: NotebookText 
-    },
-    {
-        title: "Team",
-        url: "/",
-        icon: User 
-    }
+  {
+    title: "Staff",
+    url: "/dashboard/staff",
+    icon: Users,
+  },
+  {
+    title: "Billing",
+    url: "/dashboard/billing",
+    icon: CreditCard,
+  },
+  {
+    title: "Settings",
+    url: "/settings",
+    icon: Settings,
+  },
 ]
 
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarHeader>
-        Techspire Food System
-      </SidebarHeader>
+    <Sidebar className="w-64 h-screen bg-gray-100 text-gray-800">
+      <SidebarHeader className="p-4 text-2xl font-bold text-center border-b">Restaurant Manager</SidebarHeader>
       <SidebarContent>
-
-      <SidebarGroup>
-          <SidebarGroupLabel className="text-lg">Table</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="ml-5">
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
         <SidebarGroup>
-          <SidebarGroupLabel className="text-lg">Items</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu className="ml-5">
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+            <SidebarMenu>
+              {menuItems.map((item) => (
+                <SidebarMenuItem key={item.title} className="py-2">
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-lg">Biling</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="ml-5">
-              {biling.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-lg">Configuration</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="ml-5">
-              {config.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
+                    <Link
+                      href={item.url}
+                      className="flex items-center space-x-4 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                    >
+                      <item.icon className="w-6 h-6" />
+                      <span className="text-lg">{item.title}</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -136,3 +87,4 @@ export function AppSidebar() {
     </Sidebar>
   )
 }
+
