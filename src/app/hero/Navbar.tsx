@@ -15,7 +15,8 @@ export function Navbar() {
     <>
     <div className="fixed top-0 left-0 w-full z-50 bg-slate-100 ">
       <div className="flex justify-between items-center py-4 lg:px-20 px-2 border md:px-8">
-      <MagicCursor />
+    <MagicCursor/>
+
         {/* logoSection */}
         <div>
           <Link href="/">
