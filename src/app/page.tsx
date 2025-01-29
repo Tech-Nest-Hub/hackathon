@@ -1,13 +1,12 @@
-
-
-import SignUp from "./login/page";
+import { Hero } from "@/components/HeroSection";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
     <div>
 
-      <SignUp/>
-
+<Navbar/>
+<Hero/>
 
 
     </div>
