@@ -5,6 +5,7 @@ import { MapPin, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth, useClerk } from "@clerk/nextjs";
 import { MagicCursor } from "../menu/(components)/MagicCursor";
+import logo from "../../public/logo.png";
 
 export function Navbar() {
   const { userId } = useAuth();
