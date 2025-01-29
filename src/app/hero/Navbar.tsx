@@ -5,10 +5,12 @@ import { MapPin, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth, useClerk } from "@clerk/nextjs";
 import { MagicCursor } from "../menu/(components)/MagicCursor";
+import { useRouter } from "next/navigation";
 
 export function Navbar() {
   const { userId } = useAuth();
   const { signOut } = useClerk();
+  const router = useRouter()
   return (
     <>
     <div className="fixed top-0 left-0 w-full z-50 bg-slate-100 ">
@@ -53,6 +55,7 @@ export function Navbar() {
             </Button>
           ) : (
             <Button
+              onClick={() => router.push("/sign-in")}
               variant="outline"
               className="border-red-600 text-red-600 hover:bg-red-50 hover:text-red-700 hover:scale-105 transition-all"
             >
