@@ -48,9 +48,6 @@ export function Navbar() {
               Login
             </Button>
           )}
-          <Button className="bg-green-600 text-white hover:bg-green-700 hover:scale-105 transition-all">
-            Sign Up
-          </Button>
         </div>
       </div>
     </div>
