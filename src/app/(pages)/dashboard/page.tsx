@@ -6,6 +6,7 @@ import { Plus } from "lucide-react";
 import { MenuCard } from "../MenuCard";
 import Link from "next/link";
 import Menu from "@/app/menu/(components)/Menu";
+import DashboardMenu from "./(dashcomo)/DashBoardMenu";
 
 // Sample data
 export const menuItems = [
@@ -85,7 +86,7 @@ const Dashboard = () => {
       </div>
 
       
-       <Menu/>
+       <DashboardMenu/>
     
     </div>
   );

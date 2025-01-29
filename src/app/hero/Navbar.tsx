@@ -3,9 +3,12 @@
 import Link from "next/link"
 import { MapPin, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { MagicCursor } from "../menu/(components)/MagicCursor"
 
 export function Navbar() {
   return (
+    <>
+    <MagicCursor/>
     <div className="fixed top-0 left-0 w-full z-50 bg-slate-100 ">
       <div className="flex justify-between items-center py-4 lg:px-20 px-2 border md:px-8">
 
@@ -47,5 +50,6 @@ export function Navbar() {
 
       </div>
     </div>
+    </>
   )
 }
