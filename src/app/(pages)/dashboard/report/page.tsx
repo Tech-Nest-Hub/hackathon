@@ -1,3 +1,4 @@
+import Chart from "@/components/Chart"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
@@ -36,6 +37,7 @@ export default function Billing() {
             <p className="text-3xl font-bold">$48.22</p>
           </CardContent>
         </Card>
+        <Chart />
       </div>
       <h2 className="text-xl font-semibold mb-4">Recent Transactions</h2>
       <Table>
