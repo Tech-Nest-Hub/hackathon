@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import React from "react"
-import { Button } from "@/components/ui/button"
-import { Plus } from "lucide-react"
-import { MenuCard } from "../MenuCard"
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
+import { MenuCard } from "../MenuCard";
+import Link from "next/link";
 
 // Sample data
-const menuItems = [
+export const menuItems = [
   {
     id: 1,
     name: "Wagyu Beef Steak",
@@ -68,7 +69,7 @@ const menuItems = [
     available: false,
   },
   // Add more items as needed...
-]
+];
 
 const Dashboard = () => {
   return (
@@ -76,22 +77,21 @@ const Dashboard = () => {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-3xl font-bold">Featured Menu Items</h1>
-          <p className="text-muted-foreground">Manage and update your restaurant's offerings</p>
+          <p className="text-muted-foreground">
+            Manage and update your restaurant's offerings
+          </p>
         </div>
-        <Button className="bg-orange-600 hover:bg-orange-700">
-          <Plus className="mr-2 h-4 w-4" />
-          Add New Item
-        </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {menuItems.map((item) => (
-          <MenuCard key={item.id} item={item} />
+          <Link href={`/dashboard/orders/${item.id}`}>
+            <MenuCard key={item.id} item={item} />
+          </Link>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
-
+export default Dashboard;

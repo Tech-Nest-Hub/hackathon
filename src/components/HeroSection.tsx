@@ -57,7 +57,7 @@ export function Hero() {
               </div>
               <div className="absolute right-0 top-0 h-full w-1/2">
                 <Image
-                  src={slide.image || "/placeholder.svg"}
+                  src={"/placeholder.svg"}
                   alt="Hero image"
                   className="object-cover"
                   fill
