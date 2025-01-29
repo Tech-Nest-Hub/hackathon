@@ -10,6 +10,8 @@ import OrderDialog from "./OrderDialog"
 import { Order, RestaurantTable } from "../(types)/tables"
 
 
+
+
 // Mock data for tables
 const mockTables: RestaurantTable[] = [
   {
@@ -85,7 +87,7 @@ export default function RestaurantTablesGrid() {
     setSelectedOrder(null)
   }
 
-  const getStatusStyles = (status: keyof typeof RestaurantTable) => {
+  const getStatusStyles = (status: "open" | "reserved" | "occupied" | "closed") => {
       const styles = {
         open: "bg-green-100 border-green-600",
         reserved: "bg-yellow-100 border-yellow-600",
@@ -105,7 +107,7 @@ export default function RestaurantTablesGrid() {
             className={`relative border-2 ${getStatusStyles(table.status)} ${table.status === "occupied" ? "cursor-pointer" : ""}`}
             onClick={() => handleCardClick(table)}
           >
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 z-[900]">
               <Badge
                 className={`${
                   table.status === "open"
